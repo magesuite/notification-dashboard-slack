@@ -1,0 +1,20 @@
+{
+  "name": "creativestyle/magesuite-notification-dashboard-slack",
+  "description": "Notification Dashboard Slack Integration",
+  "type": "magento2-module",
+  "homepage": "https://creativestyle.de",
+  "license": "OSL-3.0",
+  "require": {
+    "creativestyle/magesuite-notification-dashboard": "^1.0.0"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "MageSuite\\NotificationDashboardSlack\\": ""
+    }
+  }
+}
+
+
