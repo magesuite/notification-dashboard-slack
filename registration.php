@@ -5,4 +5,3 @@
     'MageSuite_NotificationDashboardSlack',
     __DIR__
 );
-
