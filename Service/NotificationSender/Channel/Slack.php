@@ -12,14 +12,18 @@ class Slack
 
     protected \Magento\Framework\Serialize\Serializer\Json $serializer;
 
+    protected \MageSuite\NotificationDashboard\Logger\Logger $logger;
+
     public function __construct(
         \GuzzleHttp\ClientFactory $clientFactory,
         \MageSuite\NotificationDashboardSlack\Helper\Configuration $configuration,
-        \Magento\Framework\Serialize\Serializer\Json $serializer
+        \Magento\Framework\Serialize\Serializer\Json $serializer,
+        \MageSuite\NotificationDashboard\Logger\Logger $logger
     ) {
         $this->clientFactory = $clientFactory;
         $this->configuration = $configuration;
         $this->serializer = $serializer;
+        $this->logger = $logger;
     }
 
     public function send($notification, $channelsData)
@@ -59,7 +63,11 @@ class Slack
                 $payload['attachments']['fields']['text'] = sprintf('%s %s', self::SLACK_HERE_PREFIX, $payload['attachments']['fields']['text']);
             }
 
-            $client->post($webhookUrl, ['body' => $this->serializer->serialize(array_filter($payload))]);
+            try {
+                $client->post($webhookUrl, ['body' => $this->serializer->serialize(array_filter($payload))]);
+            } catch (\GuzzleHttp\Exception\GuzzleException $e) {
+                $this->logger->error($e->getMessage());
+            }
         }
     }
 }
