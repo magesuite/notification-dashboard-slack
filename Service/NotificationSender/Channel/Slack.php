@@ -65,6 +65,10 @@ class Slack
 
             try {
                 $client->post($webhookUrl, ['body' => $this->serializer->serialize(array_filter($payload))]);
+
+                if ($this->configuration->isDebugModeEnabled()) {
+                    $this->logger->info(sprintf('Slack notification payload: %s', var_export($payload, true)));
+                }
             } catch (\GuzzleHttp\Exception\GuzzleException $e) {
                 $this->logger->error($e->getMessage());
             }

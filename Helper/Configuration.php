@@ -8,6 +8,7 @@ class Configuration
     const XML_PATH_NOTIFICATION_DASHBOARD_SLACK_WEBHOOK_TOKEN = 'notification_dashboard/slack/webhook_token';
     const XML_PATH_NOTIFICATION_DASHBOARD_SLACK_USERNAME = 'notification_dashboard/slack/username';
     const XML_PATH_NOTIFICATION_DASHBOARD_SLACK_ICON_EMOJI = 'notification_dashboard/slack/icon_emoji';
+    const XML_PATH_NOTIFICATION_DASHBOARD_SLACK_IS_DEBUG_MODE_ENABLED = 'notification_dashboard/slack/is_debug_mode_enabled';
 
     protected \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig;
 
@@ -45,5 +46,10 @@ class Configuration
     public function getSlackIconEmoji()
     {
         return $this->scopeConfig->getValue(self::XML_PATH_NOTIFICATION_DASHBOARD_SLACK_ICON_EMOJI);
+    }
+
+    public function isDebugModeEnabled()
+    {
+        return $this->scopeConfig->getValue(self::XML_PATH_NOTIFICATION_DASHBOARD_SLACK_IS_DEBUG_MODE_ENABLED);
     }
 }

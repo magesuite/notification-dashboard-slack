@@ -6,6 +6,7 @@
                 <webhook_url>https://hooks.slack.com/services/</webhook_url>
                 <username>Notification Dashboard</username>
                 <icon_emoji>:warning:</icon_emoji>
+                <is_debug_mode_enabled>0</is_debug_mode_enabled>
             </slack>
         </notification_dashboard>
     </default>
