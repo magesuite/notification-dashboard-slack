@@ -1,0 +1,13 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:MageSuite_Changelog:etc/changelog.xsd">
+    <module id="MageSuite_NotificationDashboardSlack" name="MageSuite_NotificationDashboardSlack">
+        <changelog>
+            <tag version="1.0.0" date="2022-11-30">
+                <entry>
+                    <type>INIT</type>
+                    <overview>Added slack sender channel</overview>
+                    <ticket_id>IPET-837</ticket_id>
+                </entry>
+            </tag>
+        </changelog>
+    </module>
+</config>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <columns name="user_columns">
+        <column name="slack" sortOrder="40" class="MageSuite\NotificationDashboardSlack\Ui\Component\Listing\Column\Slack">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Slack channel</label>
+            </settings>
+        </column>
+    </columns>
+</listing>

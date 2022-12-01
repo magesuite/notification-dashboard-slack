@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="notification_dashboard">
+            <group id="slack" translate="label" type="text" sortOrder="20" showInDefault="1">
+                <label>Slack</label>
+                <field id="webhook_url" translate="label" type="text" sortOrder="10" showInDefault="1" canRestore="1">
+                    <label>Webhook Url</label>
+                </field>
+                <field id="webhook_token" translate="label" type="obscure" sortOrder="20" showInDefault="1">
+                    <label>Webhook Token</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+                <field id="username" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Username</label>
+                </field>
+                <field id="icon_emoji" translate="label" type="text" sortOrder="40" showInDefault="1" canRestore="1">
+                    <label>Slack Icon</label>
+                </field>
+                <field id="is_debug_mode_enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Is Debug Mode Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If enabled, all notifications sent to slack, will also be written to the logs.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
