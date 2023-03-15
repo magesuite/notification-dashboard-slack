@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <fieldset name="general" class="MageSuite\NotificationDashboard\Ui\Component\Form\FieldsetVisibility" sortOrder="10">
-        <dynamicRows name="users"  sortOrder="100">
+        <dynamicRows name="users" sortOrder="100">
             <container name="record" component="Magento_Ui/js/dynamic-rows/record">
                 <field name="send_to_slack" formElement="checkbox">
                     <argument name="data" xsi:type="array">
