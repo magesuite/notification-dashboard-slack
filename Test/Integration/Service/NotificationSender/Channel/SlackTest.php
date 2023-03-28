@@ -66,7 +66,7 @@ class SlackTest extends \PHPUnit\Framework\TestCase
     {
         $message = 'Dummy message';
         $title = 'Item name';
-        $collector = $this->getCollector();
+        $collector = $this->collectorRepository->get('Test Collector');
         $this->prepareCollectorUser($collector->getId());
 
         $this->notificationChannelResolverMock->method('getChannelDataByCollectorIds')->willReturn(
@@ -86,14 +86,6 @@ class SlackTest extends \PHPUnit\Framework\TestCase
         $notifications = $this->notificationRepository->getList();
         $items = $notifications->getItems();
         $this->assertCount(1, $items);
-    }
-
-    protected function getCollector()
-    {
-        $collectors = $this->collectorRepository->getList();
-        $items = $collectors->getItems();
-
-        return array_shift($items);
     }
 
     protected function prepareCollectorUser($collectorId)
